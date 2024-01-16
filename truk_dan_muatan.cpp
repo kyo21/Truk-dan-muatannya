@@ -30,8 +30,8 @@ void bobot_maks(map<int, map<int, int>> truk){
     }
 
     // Menampilkan bobot maksimum dan posisi
-    cout << "Bobot Maksimum: " << maks_bobot << " pada posisi (" << posisi_maks.first << ", " << posisi_maks.second << ")\n";
-}
+    cout << "Bobot Maksimum: " << maks_bobot << " pada posisi (" << posisi_maks.first << ", " << posisi_maks.second << ")\n"
+
 
 //CODE
 }
@@ -44,6 +44,5 @@ int main(){
     truk[3][4] = 20;
 
     bobot_maks(truk);
-
 return 0;
 }
