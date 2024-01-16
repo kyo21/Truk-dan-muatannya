@@ -9,36 +9,25 @@ using namespace std;
 
 map<int, map<int, int>> truk;
 
-void bobot_maks(int n, int kontainer[][2]) {
-    int dp[n + 1];
+void bobot_maks(map<int, map<int, int>> truk) {
+    int maks_bobot = -1; // Inisialisasi maks_bobot dengan nilai yang tidak mungkin
+    pair<int, int> posisi_maks;
+// Menggunakan iterator untuk mengakses elemen map
+    for (auto it1 = truk.begin(); it1 != truk.end(); ++it1) {
+        for (auto it2 = it1->second.begin(); it2 != it1->second.end(); ++it2) {
+            // Melakukan sesuatu dengan nilai bobot pada posisi (it1->first, it2->first)
+            int bobot = it2->second;
+            // Contoh: Menampilkan bobot
+            cout << "Bobot pada posisi (" << it1->first << ", " << it2->first << "): " << bobot << endl;
 
-    for (int i = 0; i <= n; ++i) {
-        dp[i] = 0;
-    }
-
-    for (int i = 1; i <= n; ++i) {
-        int bobot_maksimal = 0;
-        for (int j = 0; j < i; ++j) {
-            if (kontainer[j][0] >= i - j) {
-                bobot_maksimal = max(bobot_maksimal, dp[j] + kontainer[i - 1][1]);
+            // Memeriksa apakah bobot saat ini lebih besar dari maks_bobot
+            if (bobot > maks_bobot) {
+                maks_bobot = bobot;
+                posisi_maks = {it1->first, it2->first};
             }
         }
-        dp[i] = max(dp[i - 1], bobot_maksimal);
     }
 
-    cout << "bobot maksimal = " << dp[n] << " Kg." << endl;
-}
-
-int main() {
-    //Contoh 1
-    int n1 = 4;
-    int kontainer1[][2] = {{3, 100}, {2, 200}, {1, 300}};
-    bobot_maks(n1, kontainer1);
-
-    //Contoh 2
-    int n2 = 3;
-    int kontainer2[][2] = {{1, 150}, {5, 50}, {2, 300}};
-    bobot_maks(n2, kontainer2);
-
-    return 0;
+    // Menampilkan bobot maksimum dan posisi
+    cout << "Bobot Maksimum: " << maks_bobot << " pada posisi (" << posisi_maks.first << ", " << posisi_maks.second << ")\n";
 }
