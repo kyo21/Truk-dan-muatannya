@@ -7,10 +7,27 @@ using namespace std;
 
 //----kode di atas batas ini tidak boleh diganti atau ditambah----
 
+
 map<int, map<int, int>> truk;
 
-void bobot_maks(map<int, map<int, int>> truk){
- int maks_bobot = -1; // Inisialisasi maks_bobot dengan nilai yang tidak mungkin
+// Deklarasi fungsi bobot_maks
+void bobot_maks(map<int, map<int, int>> truk);
+
+int main() {
+    // Contoh penggunaan fungsi bobot_maks
+    truk[1][2] = 10;
+    truk[2][3] = 15;
+    truk[3][4] = 20;
+
+    // Memanggil fungsi bobot_maks
+    bobot_maks(truk);
+
+    return 0;
+}
+
+// Definisi fungsi bobot_maks
+void bobot_maks(map<int, map<int, int>> truk) {
+    int maks_bobot = -1; // Inisialisasi maks_bobot dengan nilai yang tidak mungkin
     pair<int, int> posisi_maks;
 
     // Menggunakan iterator untuk mengakses elemen map
@@ -30,19 +47,5 @@ void bobot_maks(map<int, map<int, int>> truk){
     }
 
     // Menampilkan bobot maksimum dan posisi
-    cout << "Bobot Maksimum: " << maks_bobot << " pada posisi (" << posisi_maks.first << ", " << posisi_maks.second << ")\n"
-
-
-//CODE
-}
-
-
-int main(){
-    // Contoh penggunaan fungsi bobot_maks
-    truk[1][2] = 10;
-    truk[2][3] = 15;
-    truk[3][4] = 20;
-
-    bobot_maks(truk);
-return 0;
+    cout << "Bobot Maksimum: " << maks_bobot << " pada posisi (" << posisi_maks.first << ", " << posisi_maks.second << ")\n";
 }
