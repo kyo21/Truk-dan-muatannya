@@ -9,6 +9,7 @@ using namespace std;
 
 map<int, map<int, int>> truk;
 
+<<<<<<< HEAD
 void bobot_maks(map<int, map<int, int>> truk) {
     int maks_bobot = -1; // Inisialisasi maks_bobot dengan nilai yang tidak mungkin
     pair<int, int> posisi_maks;
@@ -30,4 +31,12 @@ void bobot_maks(map<int, map<int, int>> truk) {
 
     // Menampilkan bobot maksimum dan posisi
     cout << "Bobot Maksimum: " << maks_bobot << " pada posisi (" << posisi_maks.first << ", " << posisi_maks.second << ")\n";
+=======
+void bobot_maks(map<int, map<int, int>> truk){
+int maks_bobot = -1; // Inisialisasi maks_bobot dengan nilai yang tidak mungkin
+    pair<int, int> posisi_maks;
+
+
+return 0;
+>>>>>>> b31dabde68c0667e57b88b29defeb72cf6666f0a
 }
